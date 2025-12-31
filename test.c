@@ -1,23 +1,18 @@
 #include <stdio.h>
-int rec(int);
+
 int main() 
 {
-    int i,n;
-    printf("Enter nth term: ");
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
+    int n = 4, i , c = 0;
+    for(i=1;i<=n;i++)
     {
-        printf("%d\t",rec(i));
-    }    
-    return 0;
-}
-
-int rec(int n)
-{
-    if(n==0)
-        return 0;
-    else if(n==1)
-        return 1;
+        if(n%i==0)
+        {
+            c++;
+        }
+    } 
+    if(c==2)
+        printf("Prime");
     else
-        return rec(n-1) + rec(n-2);
+        printf("COmpodite");
+    return 0;
 }
